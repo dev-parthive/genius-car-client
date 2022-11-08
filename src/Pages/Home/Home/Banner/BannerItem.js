@@ -1,11 +1,11 @@
 import React from 'react';
-
+import './Banner.css'
 const BannerItem = ({slide}) => {
     console.log(slide)
     const {image,  id , next , prev} = slide;
     console.log(image, id , next, prev)
     return (
-        <div id={`slide${id}`} className="carousel-item relative w-full">
+        <div id={`slide${id}`} className="carousel-item relative w-full ">
         <div className='carousel-img'>
             <img src={image} alt="" className="w-full rounded-xl" />
         </div>
