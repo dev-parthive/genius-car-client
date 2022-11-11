@@ -17,11 +17,12 @@ const Services = () => {
                 <p className="text-base capitalize my-8">the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
             </div>
              
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='grid sm:mx-auto w-full grid-cols-1 my-20 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     services.map( service => <ServiceCard key={service._id} service={service}></ServiceCard>)
                 }
             </div>
+            <button className="btn block my-9 mx-auto btn-outline text-center btn-error font-semibold">More Products</button>
         </div>
     );
 };
