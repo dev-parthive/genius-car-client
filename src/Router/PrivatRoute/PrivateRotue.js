@@ -4,7 +4,7 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const PrivateRotue = ({children}) => {
     const {user, loading} = useContext(AuthContext)
-    const location = useLocation;
+    const location = useLocation();
     
 
     if(loading){
@@ -14,7 +14,7 @@ const PrivateRotue = ({children}) => {
     if(user){
         return children
     }
-    return <Navigate state={{form: location}} replace></Navigate>
+    return <Navigate to="/login" state={{from: location}} replace></Navigate>
 };
 
 export default PrivateRotue;
