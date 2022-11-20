@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { setAuthToken } from '../../api/auth';
 import img from '../../assets/images/login/login.svg'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import SocialLogin from '../../shared/SocialLogin';
 const Signpu = () => {
     const {createUser, currentUser, loading} = useContext(AuthContext)
     const handleSignUp = (event) =>{
@@ -15,7 +17,9 @@ const Signpu = () => {
        .then(result=>{
         const user = result.user
         console.log(user);
-        form.reset()
+        form.reset() 
+        setAuthToken(user)
+
        })
        .catch(err => console.log(err))
         console.log(name, email, password)
@@ -57,6 +61,7 @@ const Signpu = () => {
             </form>
             <p className='text-center pb-8'>Already have an account? <Link
              className='text-orange-600 font-bold' to="/login">Login</Link></p>
+             <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

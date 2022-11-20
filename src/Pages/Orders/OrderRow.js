@@ -8,7 +8,7 @@ const OrderRow = ({order, handleDelete, handleStatusUpdate}) => {
       console.log(service)
       if(!service)  return ;
       
-      fetch(`https://genius-car-server-tau-teal.vercel.app/services/${service}`) 
+      fetch(`http://localhost:5000/services/${service}`) 
       .then(res => res.json())
       .then(data => setOrderService(data))
     }, [service]);
